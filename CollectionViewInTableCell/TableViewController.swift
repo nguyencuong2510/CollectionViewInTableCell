@@ -11,11 +11,12 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var listArray: [[Int]] = [[0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9],[10,11,12,13,14,15,16,17,18,19,0,1,2,3,4,5,6,7,8,9],[20,21,22,23,24,25,26,27,28,29,0,1,2,3,4,5,6,7,8,9],[30,31,32,33,34,35,36,37,38,39,0,1,2,3,4,5,6,7,8,9]]
-    var listHeader: [String] = ["item 1", "item 2", "item 3", "item 4"]
+    var listHeader: [String] = ["Trending Pictures", "Holiday", "People", "Food"]
+    var listicon: [String] = ["ic_trending@2x","ic_holiday","ic_people@2x","ic_food@2x"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DataService.share.loadFilePlist()
     }
     // MARK: - Table view data source
     
@@ -28,6 +29,8 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! TableViewCell
         
         cell.headerCollectionView.text = listHeader[indexPath.row]
+        cell.imageHeader.image = UIImage(named: "\(listicon[indexPath.row])")
+        
         
        return cell
     }

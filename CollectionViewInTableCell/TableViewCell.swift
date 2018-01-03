@@ -12,7 +12,10 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var headerCollectionView: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var imageHeader: UIImageView!
+    @IBOutlet weak var imageNext: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
