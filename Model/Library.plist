@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>iconHeader</key>
-			<string></string>
+			<string>ic_trending@2x</string>
 			<key>titleHeader</key>
-			<string></string>
+			<string>Trending Pictures</string>
 			<key>listImage</key>
 			<array>
 				<string>default</string>
@@ -22,9 +22,9 @@
 		</dict>
 		<dict>
 			<key>iconHeader</key>
-			<string></string>
+			<string>ic_holiday</string>
 			<key>titleHeader</key>
-			<string></string>
+			<string>Holiday</string>
 			<key>listImage</key>
 			<array>
 				<string>Image</string>
@@ -38,9 +38,9 @@
 		</dict>
 		<dict>
 			<key>iconHeader</key>
-			<string></string>
+			<string>ic_people@2x</string>
 			<key>titleHeader</key>
-			<string></string>
+			<string>People</string>
 			<key>listImage</key>
 			<array>
 				<string>Image-1</string>
@@ -54,9 +54,9 @@
 		</dict>
 		<dict>
 			<key>iconHeader</key>
-			<string></string>
+			<string>ic_food@2x</string>
 			<key>titleHeader</key>
-			<string></string>
+			<string>Food</string>
 			<key>listImage</key>
 			<array>
 				<string>Image-2</string>

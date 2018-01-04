@@ -10,26 +10,23 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var listArray: [[Int]] = [[0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9],[10,11,12,13,14,15,16,17,18,19,0,1,2,3,4,5,6,7,8,9],[20,21,22,23,24,25,26,27,28,29,0,1,2,3,4,5,6,7,8,9],[30,31,32,33,34,35,36,37,38,39,0,1,2,3,4,5,6,7,8,9]]
-    var listHeader: [String] = ["Trending Pictures", "Holiday", "People", "Food"]
-    var listicon: [String] = ["ic_trending@2x","ic_holiday","ic_people@2x","ic_food@2x"]
-
+    let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataService.share.loadFilePlist()
+        tableView.estimatedRowHeight = 400
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
-    // MARK: - Table view data source
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listArray.count
+        return DataService.share.dataLibrary.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! TableViewCell
         
-        cell.headerCollectionView.text = listHeader[indexPath.row]
-        cell.imageHeader.image = UIImage(named: "\(listicon[indexPath.row])")
+        cell.headerCollectionView.text = DataService.share.dataLibrary[indexPath.row].titleHeader
+        cell.imageHeader.image = DataService.share.dataLibrary[indexPath.row].iconHeader
         
         
        return cell
@@ -39,14 +36,43 @@ class TableViewController: UITableViewController {
         
         guard let tableViewCell = cell as? TableViewCell else { return }
         tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-        
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let heightCell = view.frame.height / 2
+        return heightCell
+    }
+    
 
 }
-extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    //MARK: WidthCell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let itemsPerRow: CGFloat = 3
+        
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+    
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listArray[collectionView.tag].count
+        return DataService.share.dataLibrary[collectionView.tag].listImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,13 +80,13 @@ extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         switch collectionView.tag {
         case 0:
-            cell.imageIcon.image = UIImage(named: "default")
+            cell.imageIcon.image = DataService.share.dataLibrary[collectionView.tag].listImage[indexPath.row]
         case 1:
-            cell.imageIcon.image = UIImage(named: "Image")
+            cell.imageIcon.image = DataService.share.dataLibrary[collectionView.tag].listImage[indexPath.row]
         case 2:
-            cell.imageIcon.image = UIImage(named: "Image-1")
+            cell.imageIcon.image = DataService.share.dataLibrary[collectionView.tag].listImage[indexPath.row]
         case 3:
-            cell.imageIcon.image = UIImage(named: "Image-2")
+            cell.imageIcon.image = DataService.share.dataLibrary[collectionView.tag].listImage[indexPath.row]
         default:
             cell.imageIcon.image = UIImage(named: "default")
         }
