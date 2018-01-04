@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sKu-Xp-JVd">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,40 +16,45 @@
             <objects>
                 <tableViewController id="sKu-Xp-JVd" customClass="TableViewController" customModule="CollectionViewInTableCell" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CF4-C5-7LU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="GLV-h2-Xcr">
+                            <rect key="frame" x="0.0" y="428" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" id="74N-HB-AZu" customClass="TableViewCell" customModule="CollectionViewInTableCell" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="400"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="74N-HB-AZu" id="CF9-BD-F5A">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="399.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="399.66666666666669"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_trending@2x" translatesAutoresizingMaskIntoConstraints="NO" id="IkB-bm-YdA">
-                                            <rect key="frame" x="8" y="10" width="29" height="29"/>
+                                            <rect key="frame" x="8" y="15" width="29" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="IkB-bm-YdA" secondAttribute="height" multiplier="1:1" id="Sjm-l4-IC9"/>
                                                 <constraint firstAttribute="height" constant="29" id="kiK-kE-sJ0"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmg-kM-fCC">
-                                            <rect key="frame" x="45" y="10" width="231" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="47" y="15.666666666666664" width="321" height="28.666666666666671"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                            <color key="textColor" red="0.97397786915452156" green="0.63834301217310219" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_next@2x" translatesAutoresizingMaskIntoConstraints="NO" id="iVp-GX-wDC">
-                                            <rect key="frame" x="284" y="8" width="20" height="26.5"/>
+                                            <rect key="frame" x="378" y="16.333333333333329" width="20" height="26.666666666666671"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="iVp-GX-wDC" secondAttribute="height" multiplier="3:4" id="MtE-nv-Pl0"/>
                                                 <constraint firstAttribute="width" constant="20" id="tmn-SH-qIB"/>
                                             </constraints>
                                         </imageView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kfH-zr-LOO">
-                                            <rect key="frame" x="0.0" y="34.5" width="320" height="360"/>
+                                            <rect key="frame" x="0.0" y="54.666666666666657" width="414" height="340"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="kgQ-Io-INI">
                                                 <size key="itemSize" width="130" height="130"/>
@@ -99,20 +104,20 @@
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="kfH-zr-LOO" firstAttribute="leading" secondItem="CF9-BD-F5A" secondAttribute="leading" id="5nQ-TF-UWY"/>
-                                        <constraint firstItem="iVp-GX-wDC" firstAttribute="top" secondItem="CF9-BD-F5A" secondAttribute="top" constant="8" id="BdJ-yq-i72"/>
-                                        <constraint firstItem="IkB-bm-YdA" firstAttribute="top" secondItem="CF9-BD-F5A" secondAttribute="top" constant="10" id="EEi-5I-QLn"/>
+                                        <constraint firstItem="fmg-kM-fCC" firstAttribute="centerY" secondItem="iVp-GX-wDC" secondAttribute="centerY" id="C1l-oy-FEf"/>
+                                        <constraint firstItem="IkB-bm-YdA" firstAttribute="top" secondItem="CF9-BD-F5A" secondAttribute="top" constant="15" id="GSO-vM-ZIS"/>
                                         <constraint firstAttribute="trailing" secondItem="kfH-zr-LOO" secondAttribute="trailing" id="OSO-e2-tgp"/>
-                                        <constraint firstItem="fmg-kM-fCC" firstAttribute="top" secondItem="CF9-BD-F5A" secondAttribute="top" constant="10" id="aXJ-yh-685"/>
                                         <constraint firstAttribute="bottom" secondItem="kfH-zr-LOO" secondAttribute="bottom" constant="5" id="nrI-3a-nZE"/>
+                                        <constraint firstItem="fmg-kM-fCC" firstAttribute="centerY" secondItem="IkB-bm-YdA" secondAttribute="centerY" id="rzh-Rr-GTz"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="iVp-GX-wDC" secondAttribute="trailing" constant="8" id="sjF-mt-Esz"/>
-                                        <constraint firstItem="iVp-GX-wDC" firstAttribute="leading" secondItem="fmg-kM-fCC" secondAttribute="trailing" constant="8" id="t8p-pO-nG4"/>
+                                        <constraint firstItem="iVp-GX-wDC" firstAttribute="leading" secondItem="fmg-kM-fCC" secondAttribute="trailing" constant="10" id="t8p-pO-nG4"/>
                                         <constraint firstItem="IkB-bm-YdA" firstAttribute="leading" secondItem="CF9-BD-F5A" secondAttribute="leading" constant="8" id="uFb-rp-rwX"/>
-                                        <constraint firstItem="fmg-kM-fCC" firstAttribute="leading" secondItem="IkB-bm-YdA" secondAttribute="trailing" constant="8" id="vv5-3w-hT3"/>
+                                        <constraint firstItem="fmg-kM-fCC" firstAttribute="leading" secondItem="IkB-bm-YdA" secondAttribute="trailing" constant="10" id="vv5-3w-hT3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="kfH-zr-LOO" firstAttribute="height" secondItem="74N-HB-AZu" secondAttribute="height" multiplier="0.9" id="AhN-yz-x0y"/>
+                                    <constraint firstItem="kfH-zr-LOO" firstAttribute="height" secondItem="74N-HB-AZu" secondAttribute="height" multiplier="0.85" id="AhN-yz-x0y"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="collectionView" destination="kfH-zr-LOO" id="fUd-ND-c65"/>
@@ -130,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A64-tm-FS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1303.125" y="81.338028169014081"/>
+            <point key="canvasLocation" x="1302.8985507246377" y="80.706521739130437"/>
         </scene>
     </scenes>
     <resources>
