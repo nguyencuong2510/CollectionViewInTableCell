@@ -10,8 +10,6 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
@@ -27,7 +25,6 @@ class TableViewController: UITableViewController {
         cell.headerCollectionView.text = DataService.share.dataLibrary[indexPath.row].titleHeader
         cell.imageHeader.image = DataService.share.dataLibrary[indexPath.row].iconHeader
         
-        
        return cell
     }
     
@@ -41,6 +38,10 @@ class TableViewController: UITableViewController {
         return heightCell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DataService.share.selectedHead = indexPath.row
+    }
+    
 
 }
 extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -50,7 +51,7 @@ extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let itemsPerRow: CGFloat = 3
         
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = DataService.share.sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
     
@@ -60,12 +61,12 @@ extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+        return DataService.share.sectionInsets
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        return DataService.share.sectionInsets.left
     }
     
     
@@ -88,10 +89,7 @@ extension TableViewController: UICollectionViewDelegate, UICollectionViewDataSou
         default:
             cell.imageIcon.image = UIImage(named: "default")
         }
-        
         return cell
     }
-    
-    
     
 }

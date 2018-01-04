@@ -7,9 +7,17 @@
 //
 
 import Foundation
+import UIKit
+
 class DataService{
     static let share = DataService()
     
+    //MARK: index
+    var selectedHead: Int?
+    let sectionInsets = UIEdgeInsets(top: 30.0, left: 20.0, bottom: 30.0, right: 20.0)
+    
+    
+    //MARK: load data from file plist
     private var _dataLibrary: [DataLibrary]!
     var dataLibrary: [DataLibrary]{
         set{

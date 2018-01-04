@@ -18,6 +18,8 @@
 		5CD32A471FFCDAE900DF5D09 /* Library.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32A461FFCDAE900DF5D09 /* Library.plist */; };
 		5CD32A4A1FFCDE8900DF5D09 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD32A491FFCDE8900DF5D09 /* DataService.swift */; };
 		5CD32A4C1FFCE00100DF5D09 /* DataLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD32A4B1FFCE00100DF5D09 /* DataLibrary.swift */; };
+		5E3DB1CB1FFE0B9600B30A7C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CBD10701FF5F56A006DDA2A /* Info.plist */; };
+		5E3DB1CD1FFE0DFB00B30A7C /* CollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3DB1CC1FFE0DFB00B30A7C /* CollectionViewDelegateFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		5CD32A461FFCDAE900DF5D09 /* Library.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Library.plist; sourceTree = "<group>"; };
 		5CD32A491FFCDE8900DF5D09 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5CD32A4B1FFCE00100DF5D09 /* DataLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLibrary.swift; sourceTree = "<group>"; };
+		5E3DB1CC1FFE0DFB00B30A7C /* CollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				5CD32A481FFCDE7500DF5D09 /* Model */,
-				5CBD10631FF5F56A006DDA2A /* CollectionViewInTableCell */,
+				5E3DB1CA1FFE0A4400B30A7C /* controller */,
+				5CBD10631FF5F56A006DDA2A /* view&support */,
 				5CBD10621FF5F56A006DDA2A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,20 +68,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CBD10631FF5F56A006DDA2A /* CollectionViewInTableCell */ = {
+		5CBD10631FF5F56A006DDA2A /* view&support */ = {
 			isa = PBXGroup;
 			children = (
 				5CBD10641FF5F56A006DDA2A /* AppDelegate.swift */,
-				5CBD10661FF5F56A006DDA2A /* ViewController.swift */,
 				5CBD10681FF5F56A006DDA2A /* Main.storyboard */,
 				5CBD106B1FF5F56A006DDA2A /* Assets.xcassets */,
 				5CBD106D1FF5F56A006DDA2A /* LaunchScreen.storyboard */,
 				5CBD10701FF5F56A006DDA2A /* Info.plist */,
-				5CBD10761FF5F599006DDA2A /* TableViewController.swift */,
-				5C54CFD81FF5FB8A00CC2C0A /* TableViewCell.swift */,
-				5C54CFDA1FF5FE1100CC2C0A /* CollectionViewCell.swift */,
 			);
-			path = CollectionViewInTableCell;
+			path = "view&support";
 			sourceTree = "<group>";
 		};
 		5CD32A481FFCDE7500DF5D09 /* Model */ = {
@@ -88,6 +88,18 @@
 				5CD32A4B1FFCE00100DF5D09 /* DataLibrary.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5E3DB1CA1FFE0A4400B30A7C /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5CBD10661FF5F56A006DDA2A /* ViewController.swift */,
+				5CBD10761FF5F599006DDA2A /* TableViewController.swift */,
+				5C54CFD81FF5FB8A00CC2C0A /* TableViewCell.swift */,
+				5C54CFDA1FF5FE1100CC2C0A /* CollectionViewCell.swift */,
+				5E3DB1CC1FFE0DFB00B30A7C /* CollectionViewDelegateFlowLayout.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +163,7 @@
 				5CBD106F1FF5F56A006DDA2A /* LaunchScreen.storyboard in Resources */,
 				5CBD106C1FF5F56A006DDA2A /* Assets.xcassets in Resources */,
 				5CD32A471FFCDAE900DF5D09 /* Library.plist in Resources */,
+				5E3DB1CB1FFE0B9600B30A7C /* Info.plist in Resources */,
 				5CBD106A1FF5F56A006DDA2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C54CFDB1FF5FE1100CC2C0A /* CollectionViewCell.swift in Sources */,
+				5E3DB1CD1FFE0DFB00B30A7C /* CollectionViewDelegateFlowLayout.swift in Sources */,
 				5CD32A4C1FFCE00100DF5D09 /* DataLibrary.swift in Sources */,
 				5CBD10671FF5F56A006DDA2A /* ViewController.swift in Sources */,
 				5C54CFD91FF5FB8A00CC2C0A /* TableViewCell.swift in Sources */,
@@ -305,7 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CollectionViewInTableCell/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/view&support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nguyencuong.CollectionViewInTableCell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -318,7 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CollectionViewInTableCell/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/view&support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nguyencuong.CollectionViewInTableCell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
